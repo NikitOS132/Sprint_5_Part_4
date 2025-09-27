@@ -55,7 +55,7 @@ def start_from_main_page(driver):
 @pytest.fixture
 def start_from_register_page(driver):
     driver.get(register_site)
-    yield
+    return driver
 
 @pytest.fixture
 def start_from_main_not_login(driver):

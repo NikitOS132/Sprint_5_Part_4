@@ -1,13 +1,12 @@
-import pytest
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from locators import Locators
 from curl import *
 from data import Credential
 
-@pytest.mark.usefixtures("start_from_register_page")
-class TestCheckNewRegister:
-    def test_something(self, driver, new_user):
+class TestCheckRegister:
+    def test_new_register(self, start_from_register_page, new_user):
+        driver = start_from_register_page
 
         driver.find_element(*Locators.field_name).send_keys(new_user["name"])
 
@@ -19,9 +18,8 @@ class TestCheckNewRegister:
 
         assert WebDriverWait(driver, 10).until(EC.url_to_be(login_site))
 
-@pytest.mark.usefixtures("start_from_register_page")
-class TestCheckingErrorPassword:
-    def test_something(self, driver):
+    def test_err_password_in_register(self, start_from_register_page):
+        driver = start_from_register_page
 
         driver.find_element(*Locators.field_password).send_keys(Credential.incorrect_password)
 

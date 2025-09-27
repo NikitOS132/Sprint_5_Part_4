@@ -21,6 +21,10 @@ class Locators:
     # Проблемный локатор
     inscription_login = (By.XPATH, "//a[contains(@href,'login')]")
 
+    inscription_register = (By.XPATH, "//a[contains(@href,'register')]")
+
+    inscription_forgot = (By.XPATH, "//a[contains(@href,'forgot-password')]")
+
     TAB_FILLINGS = (By.XPATH, ".//span[contains(text(),'Начинки')]")
 
     LOGO = (By.XPATH, "//*[contains(@class,'AppHeader_header__linkText') and contains(@class,'ml-2')]")
@@ -51,5 +55,11 @@ class Locators:
     button_restore = (By.XPATH, ".//button[contains(text(),'Восстановить')]")
 
     ACTIVE_TAB = (By.XPATH, "//div[contains(@class,'tab_tab_type_current')]")
+
+    TABS = {
+    "Булки": (By.XPATH, ".//span[contains(text(),'Булки')]"),
+    "Начинки": (By.XPATH, ".//span[contains(text(),'Наяинки')]"),
+    "Соусы": (By.XPATH, ".//span[contains(text(),'Соусы')]"),
+}
 
     # Да

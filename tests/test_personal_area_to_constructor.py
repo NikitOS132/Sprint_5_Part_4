@@ -11,7 +11,12 @@ class TestPersonalAreaToConstructor:
 
         driver.find_element(*Locators.button_constaction).click()
 
-        WebDriverWait(driver, 60).until(EC.visibility_of_element_located(Locators.button_personal_area))
+        WebDriverWait(driver, 60).until(EC.url_to_be(main_site))
+
+        assert driver.current_url == main_site
+
+    def test_check_logo_to_constructor(self, start_from_login_page):
+        driver = start_from_login_page
 
         driver.find_element(*Locators.button_personal_area).click()
 
