@@ -16,6 +16,8 @@ class TestEntrance:
 
         WebDriverWait(driver, 60).until(EC.url_to_be(main_site))
 
+        assert driver.current_url == main_site
+
     def test_check_entrance_profile_button(self, start_from_site_not_login):
         driver = start_from_site_not_login
 
@@ -26,6 +28,8 @@ class TestEntrance:
         driver.find_element(*Locators.button_entrance).click()
 
         WebDriverWait(driver, 60).until(EC.url_to_be(main_site))
+
+        assert driver.current_url == main_site
 
     def test_check_entrance_register_site(self, start_from_register_page):
         driver = start_from_register_page
@@ -38,6 +42,8 @@ class TestEntrance:
 
         WebDriverWait(driver, 60).until(EC.url_to_be(main_site))
 
+        assert driver.current_url == main_site
+
     def test_check_entrance_forgot(self, start_from_register_page):
         driver = start_from_register_page
 
@@ -48,3 +54,5 @@ class TestEntrance:
         driver.find_element(*Locators.button_entrance).click()
 
         WebDriverWait(driver, 60).until(EC.url_to_be(main_site))
+
+        assert driver.current_url == main_site
